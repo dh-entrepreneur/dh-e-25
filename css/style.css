@@ -1,0 +1,333 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border;
+}             
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f4f4f9; /* Background for the body */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #074B76;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffeb3b;
+}
+
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hamburger Icon */
+.nav-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 6px auto;
+    transition: transform 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('../image/masjid.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    background: #ffeb3b;
+    color: #074b76;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #fdd835;
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #074b76;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 50px 20px;
+    background: #f4f4f9;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #074b76;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    background: #f4f4f9;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #074b76;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 15px;
+    background: #074b76;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    background: #0a74c1;
+    transform: scale(1.1);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #074b76;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0a74c1;
+}
+
+/* Footer */
+footer {
+    background-color: #074b76;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        background-color: #074b76;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about-img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .navbar .logo a {
+        font-size: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .gallery h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+}

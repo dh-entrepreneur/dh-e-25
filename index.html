@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pesantren Modern</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">DAARUL HIKMAH</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Pesantren Modern</h1>
+            <p>Belajar dan Berkembang dengan Teknologi</p>
+            <a href="register.html" class="btn">Klik Pendaftaran santri baru 2025/2026</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Tentang Kami</h2>
+        <p>Pesantren kami memiliki fasilitas lengkap dan pengajaran berbasis teknologi terkini. Kami memadukan pendidikan agama dan teknologi untuk menghasilkan generasi yang cerdas dan berakhlak mulia.</p>
+        <img src="./image/ibfff.jpg" alt="Pesantren Image" class="about-img">
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Galeri Pesantren</h2>
+        <div class="gallery-grid">
+            <img src="./image/trekking.jpg" alt="Gallery 1">
+            <img src="./image/trekking.jpg" alt="Gallery 2">
+            <img src="./image/trekking.jpg" alt="Gallery 3">
+            <img src="./image/trekking.jpg" alt="Gallery 4">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Hubungi kami</h2>
+        <p>Jika Anda memiliki pertanyaan atau ingin bergabung dengan kami, jangan ragu untuk menghubungi kami melalui media sosial atau formulir di bawah ini.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61563581204647">Facebook</a>
+            <a href="https://www.tiktok.com/@daarulhikmahentrepreneur?_t=8sMkqGiDkOn&_r=1">Tiktok</a>
+            <a href="https://www.youtube.com/@daarulhikmah_tv">Youtube</a>
+            <a href="https://www.instagram.com/daarulhikmahentrepreneur?igsh=MXFxeW1kcHp0MjZtNA==">Instagram</a>
+        </div>
+
+        <!-- Formulir Kontak -->
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="nama" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="pesan" placeholder="Pesan" required></textarea>
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+
+        <!-- Link untuk WhatsApp -->
+        <div id="whatsappLink" style="display:none;">
+            <a id="whatsappBtn" href="#" target="_blank" class="btn">Kirim Pesan ke WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pesantren Modern Daarul Hikmah. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Ambil elemen form
+        const contactForm = document.getElementById('contactForm');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+
+        // Nomor WhatsApp tujuan (ganti dengan nomor WhatsApp yang sesuai)
+        const whatsappNumber = '6281387905464'; // Ganti dengan nomor WhatsApp Anda
+
+        // Tambahkan event listener pada form saat disubmit
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil nilai dari input
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const pesan = document.getElementById('pesan').value;
+
+            // Menyusun pesan yang akan dikirim ke WhatsApp
+            const whatsappMessage = `Halo, saya ingin menghubungi Anda!%0A%0A` +
+                                    `Nama: ${nama}%0A` + 
+                                    `Email: ${email}%0A` + 
+                                    `Pesan: ${pesan}%0A%0A` + 
+                                    `Terima kasih!`;
+
+            // Membuat link WhatsApp yang akan dibuka
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+               // Mengarahkan pengguna ke link WhatsApp untuk mengirim pesan
+               window.open(whatsappURL, '_blank');
+
+            // Tampilkan pesan berhasil
+            alert('Terimakasih telah mengirimkan pesan kepada kami!');
+
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #074b76;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: yellow;
+}
+
+/* Hero Section */
+.hero {
+    height: 50vh;
+    background: url('../image/masjid.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #074b76;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    background: white;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #074b76;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-form,
+.contact-details {
+    background: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 40px);
+    max-width: 500px;
+}
+
+.contact-form h3,
+.contact-details h3 {
+    color: #074b76;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contact-form .btn {
+    display: inline-block;
+    background: #074b76;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form .btn:hover {
+    background: #0a74c1;
+    transform: scale(1.05);
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    background: #074b76;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.social-icon:hover {
+    background: #0a74c1;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #074b76;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar .logo a {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-details {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* For mobile view - smaller than 480px */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-form h3,
+    .contact-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+}

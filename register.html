@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Santri</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">DAARUL HIKMAH</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Formulir Pendaftaran -->
+    <main>
+        <section class="form-container">
+            <h2>Formulir Pendaftaran Santri Baru</h2>
+            <form id="daftarForm">
+                <!-- Nama Lengkap -->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+                
+                <!-- Alamat -->
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap Anda" required>
+                </div>
+                
+                <!-- Tempat, Tanggal Lahir -->
+                <div class="form-group">
+                    <label for="ttl">Tempat, Tanggal Lahir</label>
+                    <input type="text" id="ttl" name="ttl" placeholder="Contoh: Jakarta, 1 Januari 2005" required>
+                </div>
+                
+                <!-- Nama Ibu -->
+                <div class="form-group">
+                    <label for="nama_ibu">Nama Ibu</label>
+                    <input type="text" id="nama_ibu" name="nama_ibu" placeholder="Masukkan nama ibu Anda" required>
+                </div>
+                
+                <!-- Nama Ayah -->
+                <div class="form-group">
+                    <label for="nama_ayah">Nama Ayah</label>
+                    <input type="text" id="nama_ayah" name="nama_ayah" placeholder="Masukkan nama ayah Anda" required>
+                </div>
+                
+                <!-- No WhatsApp Orang Tua -->
+                <div class="form-group">
+                    <label for="no_wa_orang_tua">No WhatsApp Ibu/Ayah</label>
+                    <input type="text" id="no_wa_orang_tua" name="no_wa_orang_tua" placeholder="Masukkan nomor WhatsApp orang tua" required>
+                </div>
+                
+                <!-- Sekolah Asal -->
+                <div class="form-group">
+                    <label for="sekolah_asal">Sekolah Asal</label>
+                    <input type="text" id="sekolah_asal" name="sekolah_asal" placeholder="Masukkan nama sekolah asal Anda" required>
+                </div>
+                
+                <!-- Pilihan Jenjang Pendidikan -->
+                <div class="form-group">
+                    <label for="pilihan">Pilih Jenjang Pendidikan</label>
+                    <select id="pilihan" name="pilihan" required>
+                        <option value="" disabled selected>Pilih jenjang pendidikan</option>
+                        <option value="SMP">Masuk SMP</option>
+                        <option value="SMA">Masuk SMA</option>
+                    </select>
+                </div>
+                
+                <!-- Motivasi -->
+                <div class="form-group">
+                    <label for="motivasi">Motivasi Masuk Pesantren</label>
+                    <textarea id="motivasi" name="motivasi" rows="4" placeholder="Tuliskan motivasi Anda" required></textarea>
+                </div>
+                
+                <!-- Tombol Submit -->
+                <button type="submit" class="btn-submit">Daftar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Ambil elemen form
+        const daftarForm = document.getElementById('daftarForm');
+
+        // Nomor WhatsApp tujuan (ganti dengan nomor yang sesuai)
+        const whatsappNumber = '6281387905464';
+
+        // Tambahkan event listener pada form
+        daftarForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil nilai dari input form
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const alamat = document.getElementById('alamat').value;
+            const ttl = document.getElementById('ttl').value;
+            const nama_ibu = document.getElementById('nama_ibu').value;
+            const nama_ayah = document.getElementById('nama_ayah').value;
+            const no_wa_orang_tua = document.getElementById('no_wa_orang_tua').value;
+            const sekolah_asal = document.getElementById('sekolah_asal').value;
+            const pilihan = document.getElementById('pilihan').value;
+            const motivasi = document.getElementById('motivasi').value;
+
+            // Susun pesan WhatsApp
+            const whatsappMessage = 
+                `Halo, saya ingin mendaftar!%0A%0A` +
+                `Nama Lengkap: ${nama}%0A` +
+                `Email: ${email}%0A` +
+                `Alamat: ${alamat}%0A` +
+                `Tempat, Tanggal Lahir: ${ttl}%0A` +
+                `Nama Ibu: ${nama_ibu}%0A` +
+                `Nama Ayah: ${nama_ayah}%0A` +
+                `No WhatsApp Orang Tua: ${no_wa_orang_tua}%0A` +
+                `Sekolah Asal: ${sekolah_asal}%0A` +
+                `Pilihan Jenjang Pendidikan: ${pilihan}%0A` +
+                `Motivasi: ${motivasi}`;
+
+            // Buat URL WhatsApp
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            // Buka WhatsApp
+            window.open(whatsappURL, '_blank');
+
+            // Reset form
+            daftarForm.reset();
+        });
+    </script>
+</body>
+</html>
